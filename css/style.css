@@ -5,7 +5,7 @@
   --bg-primary: #F5F1E8;
   --bg-secondary: #EDE7DD;
   --bg-card: #FDFCF9;
-  --text-primary: #1a1a1a;
+  --text-primary: #000000;
   --text-secondary: #1a1a1a;
   --accent: #B8845C;
   --accent-dark: #8B6644;
@@ -13,8 +13,9 @@
   --shadow: rgba(44, 24, 16, 0.08);
   
   /* Typography */
-  --font-display: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
-  --font-body: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;  
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  
   /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -37,7 +38,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,7 +46,7 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -81,7 +82,7 @@ header {
 .site-title {
   font-size: clamp(2.5rem, 6vw, 5rem);
   margin-bottom: var(--space-sm);
-  font-weight: 300;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
@@ -89,7 +90,7 @@ header {
   font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-secondary);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -103,6 +104,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.8;
+  font-weight: 500;
 }
 
 /* Category Sections */
@@ -165,14 +167,14 @@ header {
 .card-title {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   margin-bottom: var(--space-xs);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .card-hanja {
   font-size: 0.9rem;
   color: var(--text-secondary);
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: var(--space-sm);
   letter-spacing: 0.1em;
 }
@@ -181,7 +183,7 @@ header {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 /* Detail Page Styles */
@@ -201,7 +203,7 @@ header {
 .detail-title {
   font-size: clamp(3rem, 6vw, 5rem);
   margin-bottom: var(--space-xs);
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .detail-hanja {
@@ -209,7 +211,7 @@ header {
   color: var(--text-secondary);
   font-family: var(--font-body);
   letter-spacing: 0.2em;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .detail-intro {
@@ -219,6 +221,7 @@ header {
   text-align: center;
   margin-top: var(--space-md);
   font-style: italic;
+  font-weight: 500;
 }
 
 /* Content Sections */
@@ -230,13 +233,14 @@ header {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   margin-bottom: var(--space-md);
   color: var(--accent-dark);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .content-section p {
   margin-bottom: var(--space-md);
   font-size: 1.05rem;
   line-height: 1.8;
+  font-weight: 500;
 }
 
 .content-section ul {
@@ -249,6 +253,7 @@ header {
   padding-left: var(--space-md);
   position: relative;
   line-height: 1.8;
+  font-weight: 500;
 }
 
 .content-section li::before {
@@ -259,7 +264,7 @@ header {
 }
 
 .content-section strong {
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
@@ -291,7 +296,7 @@ header {
   color: var(--text-primary);
   text-align: center;
   transition: var(--transition);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .related-link:hover {
@@ -318,7 +323,7 @@ header {
   color: var(--text-primary);
   transition: var(--transition);
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: var(--space-xs);
@@ -348,7 +353,7 @@ header {
   color: var(--text-secondary);
   text-decoration: none;
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 500;
   transition: var(--transition);
 }
 
@@ -364,6 +369,7 @@ footer {
   border-top: 1px solid var(--border);
   color: var(--text-secondary);
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* Responsive */
