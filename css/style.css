@@ -13,9 +13,8 @@
   --shadow: rgba(44, 24, 16, 0.08);
   
   /* Typography */
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'IBM Plex Sans', sans-serif;
-  
+  --font-display: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;  
   /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
