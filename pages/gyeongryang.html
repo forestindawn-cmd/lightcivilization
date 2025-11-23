@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>경량 ↔ 중량 - 경량문명 개념사전</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-primary: #F5F1E8;
+  --bg-secondary: #EDE7DD;
+  --bg-card: #FDFCF9;
+  --text-primary: #2C1810;
+  --text-secondary: #5A4A3F;
+  --accent: #B8845C;
+  --accent-dark: #8B6644;
+  --border: #D4CABF;
+  --shadow: rgba(44, 24, 16, 0.08);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {margin: 0;padding: 0;box-sizing: border-box;}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.detail-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: var(--space-xs);
+  font-weight: 300;
+}
+
+.detail-hanja {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  letter-spacing: 0.2em;
+  font-weight: 300;
+}
+
+.detail-intro {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: var(--space-md);
+  font-style: italic;
+}
+
+.content-section {
+  margin: var(--space-lg) 0;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: var(--space-md);
+  color: var(--accent-dark);
+  font-weight: 400;
+}
+
+.content-section p {
+  margin-bottom: var(--space-md);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.content-section ul {
+  list-style: none;
+  margin-left: var(--space-md);
+}
+
+.content-section li {
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-md);
+  position: relative;
+  line-height: 1.8;
+}
+
+.content-section li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.content-section strong {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.content-section em {
+  font-style: italic;
+  color: var(--accent-dark);
+}
+
+.related-concepts {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.related-link {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-primary);
+  text-align: center;
+  transition: var(--transition);
+  font-weight: 400;
+}
+
+.related-link:hover {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent-dark);
+}
+
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  gap: var(--space-md);
+}
+
+.nav-button {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: var(--transition);
+  font-family: var(--font-body);
+  font-weight: 400;
+  flex: 1;
+}
+
+.nav-button:hover {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent-dark);
+}
+
+.nav-button.next {
+  text-align: right;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--space-lg);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+.back-link:hover {
+  color: var(--accent-dark);
+}
+
+@media (max-width: 768px) {
+  .page-nav {flex-direction: column;}
+  .nav-button {text-align: center;}
+}
+
+html {scroll-behavior: smooth;}
+::selection {background: var(--accent);color: var(--bg-card);}
+  </style>
+</head>
+<body>
+  <div class="detail-page">
+    <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+    
+    <header class="detail-header">
+      <h1 class="detail-title">경량 ↔ 중량</h1>
+      <p class="detail-hanja">輕量 ↔ 重量</p>
+      <p class="detail-intro">
+        가벼움과 무거움. 물리적 무게를 넘어 문명의 작동 방식을 규정하는 핵심 속성.
+      </p>
+    </header>
+
+    <section class="content-section">
+      <h2 class="section-title">어원과 의미</h2>
+      <p>
+        <strong>경량(輕量)</strong>은 '輕(가볍다)'과 '量(양, 무게)'의 결합입니다. 물리적으로 무게가 적다는 뜻을 넘어, '부담 없는', '민첩한', '유연한'의 의미를 포함합니다.
+      </p>
+      <p>
+        <strong>중량(重量)</strong>은 '重(무겁다)'과 '量(양, 무게)'의 결합으로, 단순히 무게가 많이 나간다는 의미를 넘어 '견고한', '강력한', '안정적인'이라는 가치와 연결되어 왔습니다.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">역사적 발전</h2>
+      <p>
+        산업혁명 이후 200년간, <em>중량</em>은 경쟁력의 상징이었습니다. 거대한 공장, 무거운 기계, 대규모 자본이 생산력을 결정했습니다. "규모의 경제"라는 원리 아래, 더 크고 무거운 것이 더 효율적이고 강력했습니다.
+      </p>
+      <p>
+        20세기 후반부터 <em>경량화</em>가 기술 혁신의 키워드로 등장했습니다. 항공우주 산업에서 시작된 경량 소재 개발, 자동차 산업의 연비 향상을 위한 무게 감량, 그리고 모바일 기기의 소형화가 그 예입니다.
+      </p>
+      <p>
+        21세기 디지털 혁명은 이 흐름을 가속화했습니다. 클라우드 컴퓨팅은 물리적 서버의 필요성을 줄였고, 소프트웨어는 무형의 가치를 창출하기 시작했습니다. 무게와 부피가 경쟁력과 분리되기 시작한 것입니다.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">현대적 의미</h2>
+      <p>
+        오늘날 경량성은 단순한 물리적 속성을 넘어 <strong>조직 구조, 의사결정 방식, 협력 형태</strong>를 규정합니다. 스타트업이 대기업보다 빠르게 움직이고, 소규모 팀이 대규모 조직보다 혁신적인 결과를 내는 시대입니다.
+      </p>
+      <p>
+        경량성의 핵심은:
+      </p>
+      <ul>
+        <li><strong>속도</strong> - 빠른 실행과 즉각적인 피드백</li>
+        <li><strong>유연성</strong> - 변화에 민첩하게 대응하는 능력</li>
+        <li><strong>효율성</strong> - 최소한의 자원으로 최대 효과</li>
+        <li><strong>접근성</strong> - 진입 장벽의 낮아짐</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">책에서의 사용</h2>
+      <p>
+        송길영은 《경량문명의 탄생》에서 AI 기술이 가능하게 한 <em>경량문명</em>을 선언합니다. "앞으로는 2만 명이 필요한 피라미드를 열 명으로 만들 수 있다"는 그의 주장은, 중량문명에서 경량문명으로의 전환이 단순한 효율화가 아니라 문명 전체의 재편임을 의미합니다.
+      </p>
+      <p>
+        대기업의 상시 희망퇴직, 조직 축소는 단순한 구조조정이 아닙니다. 이는 <strong>거대함이 더 이상 생존 조건이 아닌 시대</strong>의 도래를 알리는 신호입니다. AI로 증강된 개인과 소규모 팀이 과거 대규모 조직만이 할 수 있던 일을 해내는 시대, 그것이 경량문명입니다.
+      </p>
+    </section>
+
+    <section class="related-concepts">
+      <h2 class="section-title">연관 개념</h2>
+      <div class="related-grid">
+        <a href="munmyeong.html" class="related-link">문명</a>
+        <a href="haek-gaein.html" class="related-link">핵개인</a>
+        <a href="gyumo-gyeongje.html" class="related-link">규모의 경제</a>
+        <a href="ingong-jineung.html" class="related-link">인공지능</a>
+      </div>
+    </section>
+
+    <nav class="page-nav">
+      <a href="../index.html" class="nav-button">← 목록으로</a>
+      <a href="munmyeong.html" class="nav-button next">문명 →</a>
+    </nav>
+  </div>
+</body>
+</html>
